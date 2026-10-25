@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTraductor — Traductor de código a lenguaje humano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>CodeTraductor</h1>
+            <p>Herramienta educativa para comprender fragmentos de código JavaScript línea por línea.</p>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Sección de Entrada -->
+        <section class="input-section">
+            <div class="section-header">
+                <h2>Ingresa tu código JavaScript</h2>
+                <div class="examples-dropdown">
+                    <label for="exampleSelect">Cargar ejemplo:</label>
+                    <select id="exampleSelect">
+                        <option value="">Selecciona un ejemplo...</option>
+                        <option value="ex1">Ejemplo 1: Variables y Condicional</option>
+                        <option value="ex2">Ejemplo 2: Ciclo y Arreglo</option>
+                        <option value="ex3">Ejemplo 3: Función y Retorno</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="editor-wrapper">
+                <textarea id="codeInput" placeholder="Escribe o pega aquí tu código JavaScript (ej. let x = 10;)..." rows="10"></textarea>
+            </div>
+
+            <div class="button-group">
+                <button id="analyzeBtn" class="btn btn-primary">Analizar Código</button>
+                <button id="clearBtn" class="btn btn-secondary">Limpiar</button>
+            </div>
+            
+            <div id="errorMsg" class="error-message hidden"></div>
+        </section>
+
+        <!-- Sección de Resultados -->
+        <section id="resultsSection" class="results-section hidden">
+            <h2>Resultados del Análisis</h2>
+
+            <!-- Resumen General -->
+            <div class="result-card summary-card">
+                <h3>Resumen General del Programa</h3>
+                <p id="summaryText">-</p>
+            </div>
+
+            <!-- Conceptos Detectados -->
+            <div class="result-card concepts-card">
+                <h3>Conceptos Clave Identificados</h3>
+                <div id="conceptsList" class="tags-container">
+                    <!-- Etiquetas dinámicas -->
+                </div>
+            </div>
+
+            <!-- Explicación Línea por Línea -->
+            <div class="result-card explanation-card">
+                <h3>Explicación Línea por Línea</h3>
+                <div id="lineExplanationList" class="lines-container">
+                    <!-- Explicaciones dinámicas -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diseñado para aprendices ADSO — SENA | JavaScript Educativo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
